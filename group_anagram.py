@@ -1,4 +1,6 @@
 from collections import defaultdict
+
+''' In Hashmap, a Bucket is a list of elements with the same Key.'''
 class Solution(object):
     def groupAnagrams(self, strs):
         """
