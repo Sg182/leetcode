@@ -13,7 +13,7 @@ public:
          
         stack<int> st;
         int size = temperatures.size();
-        vector<int> answer(size,0);
+        vector<int> answer(size,0);  //INITIALIZED TO 0 ATP
         int i;
         
         for(i = 0; i < size; i++){
