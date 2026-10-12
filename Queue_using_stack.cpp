@@ -62,5 +62,18 @@ int main(){
 
     cout << que.peek() << endl;
 
+    struct Particle{
+        double mass;
+        double velocity;
+
+        double Kinetic_energy(){
+            return 0.5*mass*velocity*velocity;
+        }
+
+    };
+
+    Particle p{2,5};
+    cout << p.Kinetic_energy() << endl;
+
     return 0;
 }
