@@ -55,6 +55,21 @@ int main(){
 
     cout << "THE SUM OF THE ELEMETS OF LL IS " << sum <<endl;
 
+    //=========ADD NEW NODE AT THE BEGINNING============
+    cout << "ADD NEW NODE AT THE BEGINNING\n";
+
+    Node* newnode = new Node{2,nullptr};
+    newnode->next = head;
+    head = newnode;
+
+    Node* temp1 = head;
+    while(temp1 != nullptr){
+        cout << temp1->data << endl;
+        sum += temp1->data;
+        temp1 = temp1->next;
+        
+    }
+
     delete temp;
     delete head;
     delete second;
@@ -64,5 +79,3 @@ int main(){
     
     return 0;
 }
-
- 
