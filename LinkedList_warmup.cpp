@@ -89,26 +89,31 @@ int main(){
     newnode->next = head;
     head = newnode;
 
+    int count1 =0;
     Node* temp1 = head;
     while(temp1 != nullptr){
         cout << temp1->data << endl;
         sum += temp1->data;
         temp1 = temp1->next;
+        count1 +=1;
         
     }
     cout<<"=========================="<<endl;
-    
+
     //INSERT A NODE AT POS 2
     insertAt(head, 2,25);
     Node* temp2 = head;
+
+    int count2 =0;
     while(temp2 != nullptr){
         cout << temp2->data << endl;
-        sum += temp2->data;
+        //sum += temp2->data;
         temp2 = temp2->next;
+        count2 +=1;
         
     }
 
-
+    cout << count1 << " "<< count2 << endl;
     while(head != nullptr){
         temp = head;
         head = head->next;
