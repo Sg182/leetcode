@@ -18,6 +18,42 @@ struct Node{
     Node* next;
 };
 
+//=============DELETE A NODE AT i======================
+
+bool deleteAt(Node* &head, int i){
+    if (i < 0 || head==nullptr) return false;
+
+    if (i==0){
+        Node* todelete = head;
+        head = head->next;
+        delete todelete;
+        return true;
+    }
+
+    Node* temp = head;
+
+    for(int j=0; j < i-1; j++){
+        if (temp == nullptr) return false;
+        temp = temp->next;
+    }
+
+    //CHECK IF THE NODE TO DELETE EXISTS
+
+    if (temp == nullptr || temp->next==nullptr){
+        return false;
+    }
+
+    Node* todelete = temp->next;
+
+    Node* tojoin = temp->next->next;
+    temp->next = tojoin;
+
+    delete todelete;
+    return true;
+
+
+};
+//=============INSERTING A LINKED LIST=================
 bool insertAt(Node* &head, int i, int num){
     if (i < 0){
         return false;
@@ -44,6 +80,8 @@ bool insertAt(Node* &head, int i, int num){
     return true;
 
 };
+//=========================================================
+
 
 int main(){
     
@@ -69,7 +107,7 @@ int main(){
 
     Node* temp = head;
 
-    temp->data = 100;
+    //temp->data = 100;
     int sum = 0;
     
     //TRAVERSING A LINKED LIST
@@ -81,6 +119,7 @@ int main(){
     }
 
     cout << "THE SUM OF THE ELEMETS OF LL IS " << sum <<endl;
+
 
     //=========ADD NEW NODE AT THE BEGINNING============
     cout << "ADD NEW NODE AT THE BEGINNING\n";
@@ -101,7 +140,7 @@ int main(){
     cout<<"=========================="<<endl;
 
     //INSERT A NODE AT POS 2
-    insertAt(head, 2,25);
+    insertAt(head, 2, 100);
     Node* temp2 = head;
 
     int count2 =0;
@@ -113,7 +152,22 @@ int main(){
         
     }
 
-    cout << count1 << " "<< count2 << endl;
+    cout << count1 << "; "<< count2 << endl;
+    cout << "AFTER DELETION" << endl;
+    
+    deleteAt(head, 2);
+
+    Node* temp3 = head;
+    int count3=0;
+    while(temp3 != nullptr){
+        cout << temp3->data << endl;
+        //sum += temp2->data;
+        temp3 = temp3->next;
+        count3 +=1;
+        
+    }
+    cout << count1 << "; "<< count3 << endl;
+    
     while(head != nullptr){
         temp = head;
         head = head->next;
