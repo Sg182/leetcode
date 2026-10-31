@@ -62,6 +62,7 @@ bool insertAt(Node* &head, int i, int num){
         Node* newnode = new Node{num, nullptr};
         newnode->next= head;
         head = newnode;
+        return true;
     }
 
     Node* temp = head;
@@ -174,6 +175,7 @@ int main(){
         delete temp;
     }
 
+    
     
     return 0;
 }
