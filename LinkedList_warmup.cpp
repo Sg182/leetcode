@@ -18,6 +18,33 @@ struct Node{
     Node* next;
 };
 
+bool insertAt(Node* &head, int i, int num){
+    if (i < 0){
+        return false;
+    }
+    if (i==0){
+        Node* newnode = new Node{num, nullptr};
+        newnode->next= head;
+        head = newnode;
+    }
+
+    Node* temp = head;
+     
+    if (temp == nullptr) return false;
+
+    // INSERTING NODE AT ith POSITION
+
+    for(int j=0; j < i-1; j++){
+
+        temp = temp->next;
+    }
+    Node* newnode = new Node{num, temp->next};
+    temp->next = newnode;
+    
+    return true;
+
+};
+
 int main(){
     
     //Particle p1(2.0,7.0);
@@ -69,12 +96,24 @@ int main(){
         temp1 = temp1->next;
         
     }
+    cout<<"=========================="<<endl;
+    
+    //INSERT A NODE AT POS 2
+    insertAt(head, 2,25);
+    Node* temp2 = head;
+    while(temp2 != nullptr){
+        cout << temp2->data << endl;
+        sum += temp2->data;
+        temp2 = temp2->next;
+        
+    }
 
-    delete temp;
-    delete head;
-    delete second;
-    delete third;
-    delete fourth;
+
+    while(head != nullptr){
+        temp = head;
+        head = head->next;
+        delete temp;
+    }
 
     
     return 0;
