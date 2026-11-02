@@ -1,6 +1,8 @@
 #include<iostream>
 #include<numeric>
 
+
+// FOR THIS PROBLEM x + y >= target
 using namespace std;
 
 class Solution {
