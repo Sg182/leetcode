@@ -17,7 +17,7 @@ public:
         int y1_ovr = max(ay1, by1);
 
         int width = max(0, x2_ovr-x1_ovr);
-        int height = max(0, y2_ovr - y1_ovr);
+        int height = max(0, y2_ovr - y1_ovr); //OVERLAP IN y DIRECTION
         
 
         return area1 + area2 - width*height;
