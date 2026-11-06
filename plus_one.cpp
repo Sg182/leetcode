@@ -24,3 +24,15 @@ public:
         return digits;
     }
 };
+
+int main() {
+    vector<int> arr{2, 3, 4};
+
+    arr.insert(arr.begin(), 1);
+    cout << "arr.begin -> " << *(arr.begin()) << endl;
+    for (int i : arr) {
+        cout << i << " ";
+    }
+    
+    return 0;
+}
