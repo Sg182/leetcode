@@ -28,6 +28,7 @@ public:
 int main() {
     vector<int> arr{2, 3, 4};
 
+    cout << "before arr.begin -> " << *(arr.begin()) << endl;
     arr.insert(arr.begin(), 1);
     cout << "arr.begin -> " << *(arr.begin()) << endl;
     for (int i : arr) {
