@@ -29,7 +29,7 @@ public:
 int main() {
     Solution sol;
 
-    cout << sol.lastRemaining(1) << endl;
+    cout << sol.lastRemaining(4) << endl;
 
     return 0;
 }
